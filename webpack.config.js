@@ -5,7 +5,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     filename: 'videojs-contrib-hls.js',
-    libraryTarget: 'common'
+    libraryTarget: 'umd'
   },
   resolve: {
     alias: {

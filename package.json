@@ -1,14 +1,14 @@
 {
-  "name": "videojs-contrib-hls",
+  "name": "videojs-contrib-hls-webpack",
   "version": "5.12.2",
   "description": "Play back HLS with video.js, even where it's not natively supported",
-  "main": "es5/videojs-contrib-hls.js",
+  "main": "dist/videojs-contrib-hls.js",
   "engines": {
     "node": ">= 0.10.12"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:videojs/videojs-contrib-hls.git"
+    "url": "git@github.com:zhuoqi-chen/videojs-contrib-hls-webpack.git"
   },
   "scripts": {
     "prebuild": "npm run clean",
@@ -53,7 +53,7 @@
     "watch:test": "npm-run-all -p watch:test:manifest watch:test:js watch:test:webpack watch:test:browserify",
     "watch:test:js": "node scripts/watch-test.js",
     "watch:test:manifest": "node -e \"var b=require('./scripts/manifest-data.js'); b.watch();\"",
-    "prepublish": "not-in-install && npm run build || in-install"
+    "prepublish": "npm run build:webpack"
   },
   "keywords": [
     "videojs",
