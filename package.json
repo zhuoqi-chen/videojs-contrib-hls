@@ -13,6 +13,7 @@
   "scripts": {
     "prebuild": "npm run clean",
     "build": "npm-run-all -p build:*",
+    "build:webpack": "webpack",
     "build:js": "npm-run-all build:js:babel build:js:browserify build:js:bannerize build:js:collapse build:js:uglify",
     "build:js:babel": "babel src -d es5",
     "build:js:bannerize": "bannerize dist/videojs-contrib-hls.js --banner=scripts/banner.ejs",
@@ -88,14 +89,18 @@
     "test/"
   ],
   "dependencies": {
+    "@babel/core": "^7.0.0-beta.33",
+    "@babel/preset-env": "^7.0.0-beta.33",
     "aes-decrypter": "1.0.3",
+    "babel-loader": "^8.0.0-beta.0",
     "global": "^4.3.0",
     "m3u8-parser": "2.1.0",
     "mux.js": "4.3.2",
     "url-toolkit": "1.0.9",
     "video.js": "^5.19.1 || ^6.2.0",
     "videojs-contrib-media-sources": "4.6.2",
-    "webworkify": "1.0.2"
+    "webworkify": "1.0.2",
+    "webworkify-webpack-dropin": "^1.1.9"
   },
   "devDependencies": {
     "babel": "^5.8.0",
@@ -139,6 +144,6 @@
     "videojs-standard": "^4.0.3",
     "videojs-swf": "^5.2.0",
     "watchify": "^3.6.0",
-    "webpack": "^1.13.2"
+    "webpack": "^3.9.1"
   }
 }
